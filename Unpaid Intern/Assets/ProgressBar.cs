@@ -17,7 +17,9 @@ public class ProgressBar : MonoBehaviour
     }
 
     void Update() {
-        IncrementProgress(Timer.gameTimer); 
+        if (slider.value < Player.playerTimer) {
+            IncrementProgress(Player.incrementValue); 
+        }
         // Replace with player's timer value, may need to be public/static var
 
         if (slider.value < targetProgress) {

@@ -6,7 +6,7 @@ public class BossScript : MonoBehaviour
 {
     public GameObject distractedBossArt;
     public GameObject focusedBossArt;
-    public bool isDistracted = true;
+    public static bool isDistracted = true;
     public int rangeMax = 900;
     private int randomNum;
 
