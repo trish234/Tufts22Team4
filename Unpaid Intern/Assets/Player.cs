@@ -2,8 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
-{
+public class Player : MonoBehaviour {
+    
     public GameObject PlayerArt;
     public GameObject SpeechBubbleArt;
     public static float playerTimer = 0f;
