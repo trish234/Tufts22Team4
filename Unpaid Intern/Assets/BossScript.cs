@@ -6,33 +6,39 @@ public class BossScript : MonoBehaviour
 {
     public GameObject distractedBossArt;
     public GameObject focusedBossArt;
+    public GameObject curiousBossArt;
     public bool isDistracted = true;
-    public int rangeMax = 900;
+    private int rangeMax = 3000;
     private int randomNum;
 
     // Start is called before the first frame update
     void Start()
     {
         focusedBossArt.SetActive(false);
+        curiousBossArt.SetActive(false);
+        StartCoroutine(changeFocus());
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        if (randomNum == 45){
-            ChangeFocus();
-        }
-        RandomMaker();
-    }
-    void ChangeFocus(){
-        isDistracted = !isDistracted;
-        if (isDistracted) {
-            focusedBossArt.SetActive(false);
-            distractedBossArt.SetActive(true);
-        } else {
-            distractedBossArt.SetActive(false);
-            focusedBossArt.SetActive(true);
-        }
+    IEnumerator changeFocus(){
+       while (true){
+           if (randomNum == 45){
+                if (isDistracted) {
+                    curiousBossArt.SetActive(true);
+                    yield return new WaitForSeconds(2);
+                    distractedBossArt.SetActive(false);
+                    curiousBossArt.SetActive(false);
+                    focusedBossArt.SetActive(true);
+                    isDistracted = false;
+                } else {
+                    yield return new WaitForSeconds(2);
+                    distractedBossArt.SetActive(true);
+                    focusedBossArt.SetActive(false);
+                    isDistracted = true;
+                }
+           }
+           RandomMaker();
+           yield return null;
+       }
     }
     public void RandomMaker(){
         randomNum = Random.Range(0, rangeMax);

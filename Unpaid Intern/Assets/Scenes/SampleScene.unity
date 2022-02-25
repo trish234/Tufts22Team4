@@ -317,8 +317,21 @@ PrefabInstance:
       propertyPath: m_AnchorMax.y
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7631193328357743903, guid: 79f3caa276d704ec5b37269da0e78815, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 45
+      objectReference: {fileID: 0}
+    - target: {fileID: 7631193328357743903, guid: 79f3caa276d704ec5b37269da0e78815, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -76
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 79f3caa276d704ec5b37269da0e78815, type: 3}
+--- !u!1 &1773422178 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6625361431659676355, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+  m_PrefabInstance: {fileID: 8315555635458497377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8315555635458497377
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -326,6 +339,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 8315555633690712998, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.69
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315555633690712998, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.28
+      objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388834, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_Name
       value: Boss
@@ -336,7 +357,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388836, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.35364628
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388836, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -373,6 +394,18 @@ PrefabInstance:
     - target: {fileID: 8315555634830388836, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315555634830388837, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+      propertyPath: curiousBossArt
+      value: 
+      objectReference: {fileID: 1773422178}
+    - target: {fileID: 8315555635562392094, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.62
+      objectReference: {fileID: 0}
+    - target: {fileID: 8315555635562392094, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
