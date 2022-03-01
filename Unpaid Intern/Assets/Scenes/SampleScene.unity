@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &70516837 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6625361431659676355, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
+  m_PrefabInstance: {fileID: 8315555635458497377}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,12 +413,12 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 8315555633690712998, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.69
+      propertyPath: m_LocalScale.x
+      value: 0.5125
       objectReference: {fileID: 0}
     - target: {fileID: 8315555633690712998, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.28
+      propertyPath: m_LocalScale.y
+      value: 0.5125
       objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388834, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_Name
@@ -425,7 +430,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388836, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 4
+      value: 3.04
       objectReference: {fileID: 0}
     - target: {fileID: 8315555634830388836, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: m_LocalPosition.y
@@ -466,14 +471,14 @@ PrefabInstance:
     - target: {fileID: 8315555634830388837, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
       propertyPath: curiousBossArt
       value: 
-      objectReference: {fileID: 1773422178}
+      objectReference: {fileID: 70516837}
     - target: {fileID: 8315555635562392094, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.62
+      propertyPath: m_LocalScale.x
+      value: 0.5125
       objectReference: {fileID: 0}
     - target: {fileID: 8315555635562392094, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.54
+      propertyPath: m_LocalScale.y
+      value: 0.5125
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cd00ceaad949d42d6b4f13359136bc54, type: 3}
