@@ -28,8 +28,8 @@ Transform:
   m_LocalPosition: {x: 1.02, y: 1.15, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4848931385829285379}
   - {fileID: 4848931385668422828}
+  - {fileID: 4848931385829285379}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   PlayerArt: {fileID: 4848931385829285378}
   SpeechBubbleArt: {fileID: 4848931385668422739}
+  animator: {fileID: 0}
 --- !u!1 &4848931385668422739
 GameObject:
   m_ObjectHideFlags: 0
@@ -76,7 +77,7 @@ Transform:
   m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4848931385533446539}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4848931385668422829
 SpriteRenderer:
@@ -159,7 +160,7 @@ Transform:
   m_LocalScale: {x: 0.25, y: 0.25, z: 1}
   m_Children: []
   m_Father: {fileID: 4848931385533446539}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4848931385829285404
 SpriteRenderer:
