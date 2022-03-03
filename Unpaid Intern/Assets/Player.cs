@@ -4,21 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
-    public Animator anim;
+    public Animator animator;
     // Start is called before the first frame update
     void Start()
     {
-        anim = GetComponent<Animator>();
-        anim.SetBool("Chattering", false);
+        animator = GetComponent<Animator>();
     }
 
     void Update() {
-        if(Input.GetKey(KeyCode.Space))
-        {
-            anim.SetBool("Chattering", true);
-
+        if(Input.GetKey("space")) {
+            animator.SetBool("Chattering", true);
+        }
+        else {
+            animator.SetBool("Chattering", false);
         }
     }
 
     // Update is called once per frame
 }
+
+
