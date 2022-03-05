@@ -11,7 +11,7 @@ public class BossScript : MonoBehaviour
     public static bool isDistracted = true;
 
     private int progressBarFillTime = 11 + 2; // + 2s buffer time
-    private int gameTime = 20;
+    private int gameTime = Timer.gameTime;
     //private int rangeMax = 3000;
     private List<int> distractedSegments = new List<int> ();
     private List<int> focusedSegments = new List<int> ();
