@@ -29,6 +29,19 @@ public class Player : MonoBehaviour {
             SpeechBubbleArt.SetActive(false);
 
         }
+        if (isTalking && !BossScript.isDistracted) {
+            animator.SetBool("Caught", true);
+            SpeechBubbleArt.SetActive(false);
+
+        }
+
+        if (ProgressBar.targetProgress >= 1) {
+            animator.SetBool("Win", true);
+         }
+
+        // if (ProgressBar.targetProgress < 1) {
+        //     animator.SetBool("Caught", true);
+        // }
     }
 }
 

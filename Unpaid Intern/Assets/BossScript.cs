@@ -23,6 +23,19 @@ public class BossScript : MonoBehaviour
      void Update() {
         StartCoroutine(changeFocus());
 
+        if (Player.isTalking && !BossScript.isDistracted) {
+            //gameover
+            animator.SetBool("Caught", true);
+            curiousBossArt.SetActive(false);
+        }
+        if (ProgressBar.targetProgress >= 1) {
+            //win
+            animator.SetBool("Win", true);
+            curiousBossArt.SetActive(false);
+        }
+
+        //how do I make gameover if times up.
+
     }
 
     IEnumerator changeFocus(){
