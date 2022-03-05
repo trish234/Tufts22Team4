@@ -214,8 +214,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   distractedBossArt: {fileID: 8315555635562392092}
   focusedBossArt: {fileID: 8315555633690712996}
-  isDistracted: 1
-  rangeMax: 900
+  curiousBossArt: {fileID: 0}
+  animator: {fileID: 0}
 --- !u!1 &8315555635562392092
 GameObject:
   m_ObjectHideFlags: 0

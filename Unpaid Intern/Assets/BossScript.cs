@@ -6,7 +6,7 @@ public class BossScript : MonoBehaviour
 {
     // public GameObject distractedBossArt;
     // public GameObject focusedBossArt;
-    // public GameObject curiousBossArt;
+    public GameObject curiousBossArt;
     public static bool isDistracted = true;
     private int rangeMax = 3000;
     private int randomNum;
@@ -16,7 +16,7 @@ public class BossScript : MonoBehaviour
     void Start()
     {
         // focusedBossArt.SetActive(false);
-        // curiousBossArt.SetActive(false);
+        curiousBossArt.SetActive(false);
         animator = GetComponentInChildren<Animator>();
     }
     
@@ -29,11 +29,11 @@ public class BossScript : MonoBehaviour
        while (true){
            if (randomNum == 45){
                 if (isDistracted) {
-                    // curiousBossArt.SetActive(true);
+                    curiousBossArt.SetActive(true);
                     yield return new WaitForSeconds(2);
                     animator.SetBool("Turn", false);
                     // distractedBossArt.SetActive(false);
-                    // curiousBossArt.SetActive(false);
+                    curiousBossArt.SetActive(false);
                     // focusedBossArt.SetActive(true);
                     
 

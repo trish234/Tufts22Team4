@@ -5,7 +5,7 @@ using UnityEngine;
 public class Player : MonoBehaviour {
     
     // public GameObject PlayerArt;
-    // public GameObject SpeechBubbleArt;
+    public GameObject SpeechBubbleArt;
     public static float playerTimer = 0f;
     public static float incrementValue = .001f;
     public static bool isTalking = false;
@@ -13,20 +13,20 @@ public class Player : MonoBehaviour {
 
     void Start() {
         // PlayerArt.SetActive(true);
-        // SpeechBubbleArt.SetActive(false);
+        SpeechBubbleArt.SetActive(false);
         animator = GetComponentInChildren<Animator>();
     }
 
     void Update(){
         if (Input.GetKey("space") && Timer.gameTime > 0){
-            animator.SetBool("Chattering", true);
+            animator.SetBool("Turn", true);
             isTalking = true;
-            // SpeechBubbleArt.SetActive(true);
+            SpeechBubbleArt.SetActive(true);
             playerTimer += incrementValue;
         } else {
-            animator.SetBool("Chattering", false);
+            animator.SetBool("Turn", false);
             isTalking = false;
-            // SpeechBubbleArt.SetActive(false);
+            SpeechBubbleArt.SetActive(false);
 
         }
     }
