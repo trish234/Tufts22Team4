@@ -8,10 +8,11 @@ public class Timer : MonoBehaviour {
     public GameObject timeText;
     public GameObject gameOverWinText;
     public GameObject gameOverLoseText;
-    public static int gameTime = 30;
+    public static int gameTime;
     public static float gameTimer = 0f;
 
     void Start(){
+        gameTime = 30;
         gameOverWinText.SetActive(false);
         gameOverLoseText.SetActive(false);
         UpdateTime();

@@ -10,7 +10,7 @@ public class BossScript : MonoBehaviour
     public GameObject curiousBossArt;
     public static bool isDistracted = true;
 
-    private int progressBarFillTime = 11 + 2; // + 2s buffer time
+    private int progressBarFillTime = 8; // buffer time
     private int gameTime = Timer.gameTime;
     private List<int> distractedSegments = new List<int> ();
     private List<int> focusedSegments = new List<int> ();

@@ -7,13 +7,15 @@ public class ProgressBar : MonoBehaviour {
     
     private Slider slider;
     public float fillSpeed = 0.1f;
-    public static float targetProgress = 0;
+    public static float targetProgress;
 
     private void Awake() {
         slider = gameObject.GetComponent<Slider>();
     }
 
     void Start() {
+        targetProgress = 0;
+        slider.value = 0;
     }
 
     void Update() {
