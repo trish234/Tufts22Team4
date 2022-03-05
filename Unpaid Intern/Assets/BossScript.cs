@@ -12,7 +12,6 @@ public class BossScript : MonoBehaviour
 
     private int progressBarFillTime = 11 + 2; // + 2s buffer time
     private int gameTime = Timer.gameTime;
-    //private int rangeMax = 3000;
     private List<int> distractedSegments = new List<int> ();
     private List<int> focusedSegments = new List<int> ();
 
@@ -25,8 +24,9 @@ public class BossScript : MonoBehaviour
         for (int i = 0; i < times.Count; i++){
             Debug.Log(times[i]);
         }
-        //shuffle segments 
+        //shuffle segment lists
         times = times.OrderBy( x => Random.value ).ToList();
+        //start boss
         StartCoroutine(moveBoss(times));
 
     }
