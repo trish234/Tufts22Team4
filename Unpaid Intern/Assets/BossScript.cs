@@ -10,17 +10,25 @@ public class BossScript : MonoBehaviour
     public GameObject curiousBossArt;
     public static bool isDistracted = true;
 
-    private int progressBarFillTime = 11 + 4; // + 4s buffer time
+    private int progressBarFillTime = 11 + 2; // + 2s buffer time
     private int gameTime = 20;
     //private int rangeMax = 3000;
-    private List<int> distractedSegments;
-    private List<int> focusedSegments ;
+    private List<int> distractedSegments = new List<int> ();
+    private List<int> focusedSegments = new List<int> ();
 
     void Start()
     {
+        distractedBossArt.SetActive(true);
         focusedBossArt.SetActive(false);
         curiousBossArt.SetActive(false);
         List<int> times = pickSegments();
+        for (int i = 0; i < times.Count; i++){
+            Debug.Log(times[i]);
+        }
+        //shuffle segments 
+        times = times.OrderBy( x => Random.value ).ToList();
+        StartCoroutine(moveBoss(times));
+
     }
     List<int> pickSegments(){
         //distracted time
@@ -49,37 +57,33 @@ public class BossScript : MonoBehaviour
         return distractedSegments.Concat(focusedSegments).ToList();
 
     }
-}
-    // Start is called before the first frame update
-    /* void Start()
-    {
-        focusedBossArt.SetActive(false);
-        curiousBossArt.SetActive(false);
-        StartCoroutine(changeFocus());
-    }
-
-    IEnumerator changeFocus(){
-       while (true){
-           if (randomNum == 45){
-                if (isDistracted) {
+    IEnumerator moveBoss(List<int> times) {
+         //loop through times
+        
+        for (int i = 0; i < times.Count; i++){
+            // if we have a positive time, do the question mark at end
+            if (times[i] > 0){ //distracted boss
+                Debug.Log("In distracted mode");
+                focusedBossArt.SetActive(false);
+                distractedBossArt.SetActive(true);
+                isDistracted = true;
+                if (i + 1 < times.Count && times[i + 1] < 0){
+                    yield return new WaitForSeconds(times[i] - 1);
                     curiousBossArt.SetActive(true);
-                    yield return new WaitForSeconds(2);
-                    distractedBossArt.SetActive(false);
+                    yield return new WaitForSeconds(1);
                     curiousBossArt.SetActive(false);
-                    focusedBossArt.SetActive(true);
-                    isDistracted = false;
                 } else {
-                    yield return new WaitForSeconds(2);
-                    distractedBossArt.SetActive(true);
-                    focusedBossArt.SetActive(false);
-                    isDistracted = true;
+                    yield return new WaitForSeconds(times[i]);
                 }
-           }
-           RandomMaker();
-           yield return null;
-       }
+                
+            } else { // focused boss
+                Debug.Log("In focused mode");
+                distractedBossArt.SetActive(false);
+                focusedBossArt.SetActive(true);
+                isDistracted = false;
+                yield return new WaitForSeconds(times[i] * -1);
+            }
+        }
+
     }
-    public void RandomMaker(){
-        randomNum = Random.Range(0, rangeMax);
-    }
-} */
+}
