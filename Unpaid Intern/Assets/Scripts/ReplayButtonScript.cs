@@ -16,6 +16,7 @@ public class ReplayButtonScript : MonoBehaviour
 
     void restart()
     {
+        Debug.Log("Restarting");
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 }

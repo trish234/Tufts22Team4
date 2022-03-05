@@ -10,13 +10,16 @@ public class BossScript : MonoBehaviour
     public GameObject curiousBossArt;
     public static bool isDistracted = true;
 
-    private int progressBarFillTime = 8; // buffer time
-    private int gameTime = Timer.gameTime;
+    private int progressBarFillTime = 10; //has a bit of a buffer
+    private int gameTime;
     private List<int> distractedSegments = new List<int> ();
     private List<int> focusedSegments = new List<int> ();
-
+    
     void Start()
     {
+        gameTime = 30;
+        Debug.Log("Game time is : " + gameTime);
+        progressBarFillTime = 10;
         distractedBossArt.SetActive(true);
         focusedBossArt.SetActive(false);
         curiousBossArt.SetActive(false);
@@ -25,7 +28,7 @@ public class BossScript : MonoBehaviour
             Debug.Log(times[i]);
         }
         //shuffle segment lists
-        times = times.OrderBy( x => Random.value ).ToList();
+        times.Shuffle();
         //start boss
         StartCoroutine(moveBoss(times));
 
@@ -33,19 +36,21 @@ public class BossScript : MonoBehaviour
     List<int> pickSegments(){
         //distracted time
         int distractedTimeLeft = progressBarFillTime;
-        while (distractedTimeLeft > 3){
-            int randomNum = (int) Random.Range(1, 3);
+        while (distractedTimeLeft > 2){
+            int randomNum = (int) Random.Range(1, 2);
             distractedSegments.Add(randomNum);
             distractedTimeLeft -= randomNum;
         }
         if (distractedTimeLeft > 0){
             distractedSegments.Add(distractedTimeLeft);
         }      
-        
+        Debug.Log("Done with first part");
         //focused time
         int focusedTimeLeft = gameTime - progressBarFillTime;
-        while (focusedTimeLeft > 3){
-            int randomNum = (int) Random.Range(-3, -1);
+        Debug.Log("Focused time:" + focusedTimeLeft );
+        while (focusedTimeLeft > 2){
+            int randomNum = (int) Random.Range(-2, -1);
+            Debug.Log("Adding " + randomNum);
             focusedSegments.Add(randomNum);
             focusedTimeLeft += randomNum;
         }
