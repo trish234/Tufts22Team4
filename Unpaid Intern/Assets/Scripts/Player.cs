@@ -11,6 +11,7 @@ public class Player : MonoBehaviour {
     public static bool isTalking = false;
 
     void Start() {
+        playerTimer = 0f;
         PlayerArt.SetActive(true);
         SpeechBubbleArt.SetActive(false);
     }
