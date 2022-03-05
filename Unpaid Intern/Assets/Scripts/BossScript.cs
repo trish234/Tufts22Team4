@@ -17,6 +17,7 @@ public class BossScript : MonoBehaviour
     
     void Start()
     {
+        StopAllCoroutines();
         gameTime = 30;
         Debug.Log("Game time is : " + gameTime);
         progressBarFillTime = 10;

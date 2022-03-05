@@ -8,11 +8,13 @@ public class Timer : MonoBehaviour {
     public GameObject timeText;
     public GameObject gameOverWinText;
     public GameObject gameOverLoseText;
+    public GameObject replayBtn;
     public static int gameTime = 30;
     public static float gameTimer = 0f;
 
     void Start(){
         gameTime = 30;
+        replayBtn.SetActive(false);
         gameOverWinText.SetActive(false);
         gameOverLoseText.SetActive(false);
         UpdateTime();
@@ -42,8 +44,10 @@ public class Timer : MonoBehaviour {
             // timer ends and player wins/loses
             if (ProgressBar.targetProgress >= 1) {
                 gameOverWinText.SetActive(true);
+                replayBtn.SetActive(true);
             } else {
                 gameOverLoseText.SetActive(true);
+                replayBtn.SetActive(true);
             }
         }
     }
