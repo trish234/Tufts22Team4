@@ -29,5 +29,14 @@ public class Player : MonoBehaviour {
             animator.SetBool("Turn", false);
             SpeechBubbleArt.SetActive(false);
         }
+
+        if (Timer.win) {
+            animator.SetBool("Win",true);
+        }
+        
+        if (Timer.lose) {
+            animator.SetBool("Caught",true);
+        }
+
     }
 }

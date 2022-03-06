@@ -96,4 +96,15 @@ public class BossScript : MonoBehaviour
         }
 
     }
+
+    void Update(){
+        if (Timer.win) {
+            animator.SetBool("Win",true);
+        }
+        
+        if (Timer.lose) {
+            animator.SetBool("Caught",true);
+        }
+
+    }
 }

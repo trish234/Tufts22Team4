@@ -11,6 +11,8 @@ public class Timer : MonoBehaviour {
     public GameObject replayBtn;
     public static int gameTime = 30;
     public static float gameTimer = 0f;
+    public static bool win;
+    public static bool lose;
 
     void Start(){
         gameTime = 30;
@@ -24,12 +26,14 @@ public class Timer : MonoBehaviour {
         // player gets caught before timer ends and loses
         if (Player.isTalking && !BossScript.isDistracted) {
             gameOverLoseText.SetActive(true);
+            lose = true;
             gameTime = 0;
         }
 
         // player fills bar before timer ends and wins
         if (ProgressBar.targetProgress >= 1) {
             gameOverWinText.SetActive(true);
+            win = true;
             gameTime = 0;
         }
 
@@ -45,9 +49,11 @@ public class Timer : MonoBehaviour {
             if (ProgressBar.targetProgress >= 1) {
                 gameOverWinText.SetActive(true);
                 replayBtn.SetActive(true);
+                win = true;
             } else {
                 gameOverLoseText.SetActive(true);
                 replayBtn.SetActive(true);
+                lose = true;
             }
         }
     }
