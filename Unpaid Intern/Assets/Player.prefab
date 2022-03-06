@@ -45,8 +45,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ee696edc0c6f24bb1a705cee34996674, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  PlayerArt: {fileID: 4848931385829285378}
   SpeechBubbleArt: {fileID: 4848931385668422739}
+  animator: {fileID: 0}
 --- !u!1 &4848931385668422739
 GameObject:
   m_ObjectHideFlags: 0
