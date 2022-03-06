@@ -8,7 +8,7 @@ public class Player : MonoBehaviour {
     public Animator animator;
     public GameObject SpeechBubbleArt;
     public static float playerTimer = 0f;
-    public static float incrementValue = .001f;
+    public static float incrementValue = .0004f;
     public static bool isTalking = false;
 
     void Start() {
