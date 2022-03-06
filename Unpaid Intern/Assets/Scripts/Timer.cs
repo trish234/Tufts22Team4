@@ -15,6 +15,8 @@ public class Timer : MonoBehaviour {
     public static bool lose;
 
     void Start(){
+        win = false;
+        lose = false;
         gameTime = 30;
         replayBtn.SetActive(false);
         gameOverWinText.SetActive(false);
