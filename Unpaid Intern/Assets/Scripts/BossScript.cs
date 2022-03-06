@@ -5,10 +5,11 @@ using System.Linq;
 
 public class BossScript : MonoBehaviour
 {
-    public GameObject distractedBossArt;
-    public GameObject focusedBossArt;
+    // public GameObject distractedBossArt;
+    // public GameObject focusedBossArt;
     public GameObject curiousBossArt;
     public static bool isDistracted = true;
+    public Animator animator;
 
     private int progressBarFillTime = 10; //has a bit of a buffer
     private int gameTime;
@@ -21,8 +22,9 @@ public class BossScript : MonoBehaviour
         gameTime = 30;
         Debug.Log("Game time is : " + gameTime);
         progressBarFillTime = 10;
-        distractedBossArt.SetActive(true);
-        focusedBossArt.SetActive(false);
+        animator = GetComponentInChildren<Animator>();
+        // distractedBossArt.SetActive(true);
+        // focusedBossArt.SetActive(false);
         curiousBossArt.SetActive(false);
         List<int> times = pickSegments();
         for (int i = 0; i < times.Count; i++){
@@ -70,8 +72,9 @@ public class BossScript : MonoBehaviour
             // if we have a positive time, do the question mark at end
             if (times[i] > 0){ //distracted boss
                 Debug.Log("In distracted mode");
-                focusedBossArt.SetActive(false);
-                distractedBossArt.SetActive(true);
+                // focusedBossArt.SetActive(false);
+                // distractedBossArt.SetActive(true);
+                animator.SetBool("Turn", true);
                 isDistracted = true;
                 if (i + 1 < times.Count && times[i + 1] < 0){
                     yield return new WaitForSeconds(times[i] - 1);
@@ -84,8 +87,9 @@ public class BossScript : MonoBehaviour
                 
             } else { // focused boss
                 Debug.Log("In focused mode");
-                distractedBossArt.SetActive(false);
-                focusedBossArt.SetActive(true);
+                // distractedBossArt.SetActive(false);
+                // focusedBossArt.SetActive(true);
+                animator.SetBool("Turn", false);
                 isDistracted = false;
                 yield return new WaitForSeconds(times[i] * -1);
             }
